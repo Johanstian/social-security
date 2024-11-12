@@ -1,0 +1,123 @@
+<br><br>
+<div class="container">
+  <h2>Seguridad Social</h2><br><br>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <mat-form-field class="example-full-width">
+        <mat-label>Salario</mat-label>
+        <input type="text" matInput placeholder="$ 1.300.000" [(ngModel)]="salary" currencyMask
+          [options]="{thousands: '.', precision: '' }">
+      </mat-form-field>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <mat-form-field>
+        <mat-label>Riesgo ARL</mat-label>
+        <mat-select [(ngModel)]="arl">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12" style="display: flex; align-items: center;">
+      <section class="example-section">
+        <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="isChecked" (change)="onCheckboxChange()"></mat-checkbox>
+        <mat-label style="margin-left: 5px; vertical-align: middle;">Pensionado</mat-label>
+      </section>
+    </div>
+    <div class="col-12">
+      <button mat-raised-button color="primary" (click)="calculate()" [disabled]="!salary || !arl">Calcular</button>
+      <button mat-raised-button style="margin-left: 10px;" (click)="clean()">Limpiar</button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container table-responsive" *ngIf="result">
+  <table class="table" aria-label="table">
+    <thead>
+      <tr>
+        <th scope="col" class="b-t-l b-c text-center">IBC</th>
+        <th scope="col" class="b-c text-center">Pensión</th>
+        <th scope="col" class="b-c text-center">Salud</th>
+        <th scope="col" class="b-c text-center">ARL</th>
+        <th scope="col" class="b-t-r b-c text-center">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center">{{result | currency: 'COP':'symbol-narrow':'0.0'}}</td>
+        <td class="text-center">{{pension | currency: 'COP':'symbol-narrow':'0.0'}}</td>
+        <td class="text-center">{{salud | currency: 'COP':'symbol-narrow':'0.0'}}</td>
+        <td class="text-center">{{riesgo | currency: 'COP':'symbol-narrow':'0.0'}}</td>
+        <th class="text-center" id="total">{{total | currency: 'COP':'symbol-narrow':'0.0'}}</th>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <small>Si el valor total del pago de la Seguridad Social está por encima del que aparece en la tabla, no hay
+    inconveniente, si el valor está por debajo, debe hace reajuste.</small> -->
+</div>
+
+<!-- <br><br>
+<div class="container">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Qué pasa si el valor total de la Segurad Social está por encima del que muestra la tabla?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Qué pasa si el valor total de la Segurad Social está por encima del que muestra la tabla?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <section class="example-section">
+        <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="adjust"
+          (change)="adjustSalary()"></mat-checkbox>
+        <mat-label style="margin-left: 5px; vertical-align: middle;">¿Reajuste?</mat-label>
+      </section>
+    </div>
+  </div>
+</div> -->
+<br><br>
+
+
+<!-- <div class="container">
+  <div class="row" *ngIf="adjust == true">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <mat-form-field class="example-full-width">
+        <mat-label>Salario</mat-label>
+        <input type="text" matInput placeholder="$ 1.300.000" [(ngModel)]="salarypaid" currencyMask
+          [options]="{thousands: '.', precision: '' }">
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <mat-form-field class="example-full-width">
+        <mat-label>Salario A re</mat-label>
+        <input type="text" matInput placeholder="$ 1.300.000" [(ngModel)]="total" currencyMask
+          [options]="{thousands: '.', precision: '' }">
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <button mat-raised-button color="primary" (click)="recalculate()">Reajustar</button>
+      <button mat-raised-button style="margin-left: 10px;" (click)="clean()">Limpiar</button>
+    </div>
+    <div class="col">
+      <p>{{faltante}}</p>
+    </div>
+  </div>
+</div> -->

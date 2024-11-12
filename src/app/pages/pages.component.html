@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Fomento</span>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/security">Home</button>
+    <button mat-menu-item routerLink="/about">Información</button>
+  </mat-menu>
+</mat-toolbar>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
