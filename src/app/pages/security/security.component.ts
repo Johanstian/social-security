@@ -50,10 +50,10 @@ export class SecurityComponent implements OnInit {
 
   calculate() {
     const salary = this.salary;
-    this.result = salary * 0.4 < 1423500 ? 1423500 : salary * 0.4;
-    const basePension = salary * 0.4 < 1423500 ? 1423500 : salary * 0.4;
+    this.result = salary * 0.4 < 1750905 ? 1750905 : salary * 0.4;
+    const basePension = salary * 0.4 < 1750905 ? 1750905 : salary * 0.4;
     this.pension = Math.ceil(basePension * 0.16 / 100) * 100;
-    const baseSalud = salary * 0.4 < 1423500 ? 1423500 : salary * 0.4;
+    const baseSalud = salary * 0.4 < 1750905 ? 1750905 : salary * 0.4;
     this.salud = Math.ceil(baseSalud * 0.125 / 100) * 100;
     if (this.arl == 1) {
       this.riesgo = Math.ceil(basePension * 0.00522 / 100) * 100;
@@ -89,10 +89,10 @@ export class SecurityComponent implements OnInit {
 
   recalculate() {
     const salarypaid = this.salarypaid;
-    this.result = salarypaid * 0.4 < 1423500 ? 1423500 : salarypaid * 0.4;
-    const basePension = salarypaid * 0.4 < 1423500 ? 1423500 : salarypaid * 0.4;
+    this.result = salarypaid * 0.4 < 1750905 ? 1750905 : salarypaid * 0.4;
+    const basePension = salarypaid * 0.4 < 1750905 ? 1750905 : salarypaid * 0.4;
     this.pension = Math.ceil(basePension * 0.16 / 100) * 100;
-    const baseSalud = salarypaid * 0.4 < 1423500 ? 1423500 : salarypaid * 0.4;
+    const baseSalud = salarypaid * 0.4 < 1750905 ? 1750905 : salarypaid * 0.4;
     this.salud = Math.ceil(baseSalud * 0.125 / 100) * 100;
     if (this.arl == 1) {
       this.riesgo = Math.ceil(basePension * 0.00522 / 100) * 100;

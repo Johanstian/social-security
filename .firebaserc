@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "security-1aa84"
-  }
+    "default": "seguridad-social-277e4",
+    "staging": "seguridad-social-277e4"
+  },
+  "targets": {},
+  "etags": {}
 }
